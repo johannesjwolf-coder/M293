@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="Textgestaltung .css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Textgestaltung – Übung</title>
+
+  <!-- Externes CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional: Google Font (andere Schriftart) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Textgestaltung mit HTML & CSS</h1>
+    <p class="subtitle">
+      Diese Seite zeigt <strong>Überschriften</strong>, <em>Auszeichnungen</em>, Listen, Links und verschiedene Schriften.
+    </p>
+  </header>
+
+  <main class="layout">
+    <!-- Linke Spalte -->
+    <section class="card">
+      <h2>1. Grundlagen</h2>
+
+      <p>
+        HTML liefert die <strong>Struktur</strong>, CSS macht das <strong>Design</strong>.
+        Du kannst Text z.B. <em>kursiv</em>, <strong>fett</strong> oder <mark>markiert</mark> darstellen.
+        <small>(Dies ist ein kleinerer Hinweistext.)</small>
+      </p>
+
+      <p>
+        Ein Beispiel für <code>&lt;code&gt;</code>:
+        <code>p { font-size: 16px; }</code>
+      </p>
+
+      <blockquote>
+        „Gute Typografie macht Inhalte leichter verständlich.“
+      </blockquote>
+
+      <h3>Textauszeichnungen</h3>
+      <ul>
+        <li><strong>strong</strong> = wichtig / fett</li>
+        <li><em>em</em> = betont / kursiv</li>
+        <li><mark>mark</mark> = Hervorhebung</li>
+        <li><code>code</code> = Code-Schrift</li>
+      </ul>
+
+      <p>
+        Link-Beispiel:
+        <a href="https://developer.mozilla.org/de/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+          HTML-Doku (MDN)
+        </a>
+      </p>
+    </section>
+
+    <!-- Rechte Spalte -->
+    <aside class="card">
+      <h2>2. Listen & Links</h2>
+
+      <h3>Ungeordnete Liste</h3>
+      <ul>
+        <li>Lesbarkeit (Zeilenabstand, Schriftgröße)</li>
+        <li>Kontraste (Text vs. Hintergrund)</li>
+        <li>Struktur (Absätze, Überschriften)</li>
+      </ul>
+
+      <h3>Geordnete Liste</h3>
+      <ol>
+        <li>Text schreiben</li>
+        <li>Mit HTML strukturieren</li>
+        <li>Mit CSS gestalten</li>
+      </ol>
+
+      <h3>Definitionsliste</h3>
+      <dl>
+        <dt>Serif</dt>
+        <dd>Schrift mit kleinen „Füsschen“ (z.B. Merriweather).</dd>
+
+        <dt>Sans-Serif</dt>
+        <dd>Schrift ohne „Füsschen“ (z.B. Inter).</dd>
+      </dl>
+
+      <p class="note">
+        Tipp: Nutze <span class="mono">line-height</span> und <span class="mono">max-width</span>, damit Text angenehm zu lesen ist.
+      </p>
+
+      <p>
+        Interner Link (Anker) zu Abschnitt 3:
+        <a href="#schriften">Zu den Schriften</a>
+      </p>
+    </aside>
+
+    <!-- Vollbreite unten -->
+    <section class="card wide" id="schriften">
+      <h2>3. Verschiedene Schriften</h2>
+      <p class="serif">
+        Dieser Absatz nutzt eine <strong>Serif-Schrift</strong> (Merriweather). Das wirkt oft „buchartig“.
+      </p>
+      <p class="sans">
+        Dieser Absatz nutzt eine <strong>Sans-Serif-Schrift</strong> (Inter). Das wirkt oft modern und klar.
+      </p>
+
+      <p>
+        Zurück nach oben:
+        <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Nach oben</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© Übung: Textgestaltung</p>
+  </footer>
+</body>
+</html>
+
