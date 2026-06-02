@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über mich – Johannes Wolf</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .about-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .name-field {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      text-align: center;
+    }
+
+    .bio-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      min-height: 240px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .bio-card p {
+      margin-bottom: 0.75rem;
+    }
+
+    .bio-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .profile-img-box {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 220px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .profile-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-img-box {
+        width: 100%;
+        height: 300px;
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Über mich</h1>
+
+    <button class="hamburger" id="menuBtn" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="index.html" class="active">Über mich</a>
+      <a href="faehigkeiten.html">Fähigkeit</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="about-grid">
+
+      <div class="about-left">
+        <div class="name-field">Johannes Wolf</div>
+
+        <div class="bio-card">
+          <p>Hallo! Ich bin Johannes Wolf, ein angehender Informatiker aus St. Gallen.</p>
+
+          <p>
+            Ich heisse Johannes Wolf und absolviere eine Ausbildung als Informatiker.
+            Ich wohne in Vaduz, Liechtenstein, und besuche meine Berufsschule in St. Gallen.
+            Besonders interessiere ich mich für moderne Technologien, digitale Lösungen und
+            die praktische Arbeit mit Informatik.
+          </p>
+
+          <p>
+            Während meiner Ausbildung erweitere ich kontinuierlich mein Fachwissen und sammle
+            wertvolle praktische Erfahrungen im IT-Bereich. Mein Ziel ist es, mich stetig
+            weiterzuentwickeln und neue technologische Herausforderungen erfolgreich zu meistern.
+          </p>
+        </div>
+      </div>
+
+      <div class="profile-img-box">
+        <img src="shared image (8).jpg" alt="Foto von Johannes Wolf">
+      </div>
+
+    </div>
+  </main>
+
+  <div class="page-nav">
+    <a href="faehigkeiten.html" class="btn btn-secondary">Seite &rarr;</a>
+  </div>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mainNav');
+
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

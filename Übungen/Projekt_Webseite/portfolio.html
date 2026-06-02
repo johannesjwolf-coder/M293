@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Johannes Wolf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Portfolio-spezifisch ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .portfolio-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .portfolio-img {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    .portfolio-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Video-Container */
+    .portfolio-video {
+      background: #000;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-video video,
+    .portfolio-video iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+    }
+
+    /* Kamera-Placeholder */
+    .placeholder-video {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    .placeholder-video span {
+      font-size: 3.5rem;
+    }
+
+    .portfolio-desc {
+      font-size: 0.93rem;
+      color: var(--text-dark);
+      line-height: 1.65;
+    }
+
+    .portfolio-desc h2 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 700px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Portfolio</h1>
+    <button class="hamburger" id="menuBtn" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="mainNav">
+      <a href="index.html">Über mich</a>
+      <a href="faehigkeiten.html">Fähigkeit</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="portfolio-grid">
+
+      <!-- Projekt 1 – Bild oben -->
+      <div class="portfolio-item">
+        <div class="portfolio-img">
+          <!--
+            Ersetze mit eigenem Bild:
+            <img src="img/projekt1.png" alt="C-Projekt Screenshot">
+          -->
+          🅒
+        </div>
+        <div class="portfolio-desc">
+          <h2>C-Programmierung</h2>
+          <p>
+            Kurze Beschreibung des Projekts. Was hast du gebaut? 
+            Welche Technologien hast du eingesetzt? Was war die Herausforderung? 
+            Halte die Beschreibung prägnant und aussagekräftig.
+          </p>
+        </div>
+      </div>
+
+      <!-- Projekt 2 – Bild oben -->
+      <div class="portfolio-item">
+        <div class="portfolio-img">
+          <!--
+            Ersetze mit eigenem Bild:
+            <img src="img/projekt2.png" alt="Team-Projekt Screenshot">
+          -->
+          👥
+        </div>
+        <div class="portfolio-desc">
+          <h2>Team-Projekt</h2>
+          <p>
+            Kurze Beschreibung des Projekts. Was hast du gebaut? 
+            Welche Technologien hast du eingesetzt? Was war die Herausforderung? 
+            Halte die Beschreibung prägnant und aussagekräftig.
+          </p>
+        </div>
+      </div>
+
+      <!-- Projekt 3 – Video -->
+      <div class="portfolio-item">
+        <!--
+          Video einbinden – Option 1: eigene Datei
+          <div class="portfolio-video">
+            <video controls>
+              <source src="video/demo1.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          Option 2: YouTube
+          <div class="portfolio-video">
+            <iframe src="https://www.youtube.com/embed/DEIN_VIDEO_ID" allowfullscreen></iframe>
+          </div>
+        -->
+        <div class="placeholder-video">
+          <span>🎥</span>
+          Video hier einfügen
+        </div>
+        <div class="portfolio-desc">
+          <h2>Video-Projekt 1</h2>
+          <p>
+            Beschreibung des Video-Projekts oder einer aufgezeichneten Präsentation. 
+            Was zeigt das Video? Was war deine Rolle dabei?
+          </p>
+        </div>
+      </div>
+
+      <!-- Projekt 4 – Video -->
+      <div class="portfolio-item">
+        <div class="placeholder-video">
+          <span>🎥</span>
+          Video hier einfügen
+        </div>
+        <div class="portfolio-desc">
+          <h2>Video-Projekt 2</h2>
+          <p>
+            Beschreibung des Video-Projekts oder einer aufgezeichneten Präsentation. 
+            Was zeigt das Video? Was war deine Rolle dabei?
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="page-nav both">
+    <a href="faehigkeiten.html" class="btn btn-secondary">&larr; Anfang</a>
+    <a href="kontakt.html" class="btn btn-secondary">Seite &rarr;</a>
+  </div>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mainNav');
+    btn.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+/* =========================
+   Grundlayout
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f3f3f3;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+}
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Titel
+========================= */
+.page-header {
+  text-align: center;
+  padding: 15px;
+}
+
+.page-header h1 {
+  font-size: 20px;
+}
+
+/* =========================
+   Layout
+========================= */
+.layout {
+  display: flex;
+  align-items: stretch; /* wichtig für volle Höhe */
+  gap: 20px;
+  padding: 10px;
+}
+
+/* =========================
+   Sidebar (Navigation)
+========================= */
+.sidebar {
+  background: #c7002b;
+  padding: 20px 10px;
+  min-width: 150px;
+  flex-shrink: 0;
+
+  /* GANZE HÖHE */
+  min-height: 100vh;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li {
+  margin-bottom: 20px;
+}
+
+.nav-list a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+/* Icons */
+.nav-icon {
+  width: 50px;
+  text-align: center;
+  font-size: 28px;
+  color: black; /* wie im Bild */
+}
+
+/* Text */
+.nav-text {
+  font-size: 25px;
+}
+
+/* =========================
+   Content / Artikel
+========================= */
+.content {
+  flex: 1;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: #efefef;
+  border: 1.5px solid #666;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.card button {
+  width: 100%;
+  background: #c7002b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* =========================
+   Portrait-Modus
+========================= */
+@media (orientation: portrait) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .nav-list li {
+    margin: 0;
+  }
+}
+
+/* =========================
+   Kleine Geräte (<500px)
+========================= */
+@media (max-width: 499px) {
+  .nav-text {
+    display: none;
+  }
+}
+
+/* =========================
+   Kleine Breite
+========================= */
+@media (max-width: 700px) {
+  .articles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Druck
+========================= */
+@media print {
+  .sidebar {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .card button {
+    display: none;
+  }
+}

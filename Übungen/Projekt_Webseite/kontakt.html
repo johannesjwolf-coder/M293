@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Johannes Wolf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Kontakt-spezifisch ── */
+
+    /* Kontakt-Icons-Reihe */
+    .contact-icons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .contact-channel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .contact-channel p {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .contact-icon {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+
+    .contact-channel a {
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      word-break: break-all;
+    }
+
+    .contact-channel a:hover {
+      text-decoration: underline;
+    }
+
+    /* Formular */
+    .contact-form {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-form h2 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-align: center;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .form-submit {
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .contact-icons {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kontakt</h1>
+    <button class="hamburger" id="menuBtn" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="mainNav">
+      <a href="index.html">Über mich</a>
+      <a href="faehigkeiten.html">Fähigkeit</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Kontaktkanäle -->
+    <div class="contact-icons">
+
+      <div class="contact-channel">
+        <p>Telefon</p>
+        <div class="contact-icon">📞</div>
+
+        <a href="#">+41 78 200 77 16</a>
+      </div>
+
+      <div class="contact-channel">
+        <p>E-Mail</p>
+        <div class="contact-icon">✉️</div>
+        
+        <a href="#">johannesjwolf@gmail.com</a>
+      </div>
+
+      <div class="contact-channel">
+        <p>Instagram</p>
+        <div class="contact-icon">📷</div>
+        <!--
+          <a href="https://instagram.com/deinhandle" target="_blank">@deinhandle</a>
+        -->
+        <a href="#">@Johannes67434</a>
+      </div>
+
+    </div>
+
+    <!-- Kontaktformular -->
+    <div class="contact-form">
+      <h2>Kontakt Formular</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname">
+        </div>
+        <div class="form-group">
+          <label for="nachname">Nachname</label>
+          <input type="text" id="nachname" name="nachname" placeholder="Dein Nachname">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nachricht">Nachricht</label>
+        <textarea id="nachricht" name="nachricht" rows="5" placeholder="Schreib mir eine Nachricht…"></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="button" class="btn btn-secondary" onclick="handleSubmit()">Senden</button>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="page-nav both">
+    <a href="index.html" class="btn btn-secondary">&larr; Anfang</a>
+  </div>
+
+  <script>
+    // Hamburger
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mainNav');
+    btn.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // Formular-Submit (Platzhalter – ersetze mit eigenem Backend/Formspree)
+    function handleSubmit() {
+      const vorname = document.getElementById('vorname').value.trim();
+      const nachname = document.getElementById('nachname').value.trim();
+      const nachricht = document.getElementById('nachricht').value.trim();
+
+      if (!vorname || !nachname || !nachricht) {
+        alert('Bitte fülle alle Felder aus.');
+        return;
+      }
+
+      alert(`Danke, ${vorname}! Deine Nachricht wurde gesendet.`);
+      document.getElementById('vorname').value = '';
+      document.getElementById('nachname').value = '';
+      document.getElementById('nachricht').value = '';
+    }
+  </script>
+</body>
+</html>
